@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CustomersApp
-{// check
+{
     // 1. Create a new console application named CustomersApp. 
     class Program
     {
