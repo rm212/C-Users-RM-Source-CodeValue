@@ -9,7 +9,8 @@ namespace Backgammon
     class BoardDisplay
     {
         // Initialize the board game for display
-        private string[] gameBoard = new string[boardDefault.Length];
+
+        private string[] gameBoard = new string[17];
         public void InitializeGameBoard()
         {
             for (int i = 0; i < boardDefault.Length; i++)
@@ -64,7 +65,7 @@ namespace Backgammon
 
         //Clean Board and Clean Dice
         //(17 Lines x 69 Columns)
-        private static string[] boardDefault = new string[17]
+        private string[] boardDefault = new string[17]
         {
             "____________________________________________________________________",
             "|H||C12||C11||C10||C 9||C 8||C 7||H||C 6||C 5||C 4||C 3||C 2||C 1||H|",
