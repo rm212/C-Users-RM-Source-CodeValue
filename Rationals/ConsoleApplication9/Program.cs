@@ -133,8 +133,7 @@ namespace ConsoleApplication9
             Console.WriteLine("\n3. Add casting operator to double and from an integer:");
             Console.WriteLine("Casting the rational number:\t{0}\t to double: {1}", Ratio2.Display(), (double)Ratio2);
 
-            int ParameterForCusting = 9;
-            Console.WriteLine("Casting the integer 9 to Rational number: \t{0}\t", ((Rational)ParameterForCusting).Display());
+            Console.WriteLine("Casting the integer 16 to Rational number: \t{0}\t", ((Rational)16).Display());
 
 
             Console.WriteLine("\n\nError Checking: Set Denominator of '0'");
