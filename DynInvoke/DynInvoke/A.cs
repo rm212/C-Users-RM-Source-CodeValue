@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backgammon
+namespace DynInvoke
 {
-    class MovesSetter
+    class A
     {
-
-
-
-
-
     }
 }

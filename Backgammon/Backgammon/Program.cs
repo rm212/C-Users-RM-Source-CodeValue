@@ -10,12 +10,22 @@ namespace Backgammon
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i<=24;i++)
-            {
-                Console.WriteLine("|{0}:{1}|");
+            Board Controller = new Board();
 
-            }
+            Player PlayerA = new Player();
+            Player PlayerB = new Player();
+            PlayerB.InitializeBorad('B');
+            Dice[] Dices = new Dice[2];
+            Controller.UpdateBoardPicture(PlayerA, PlayerB);
 
+            BoardDisplay Board = new BoardDisplay();
+            Board.InitializeGameBoard();
+            Board.DisplayBoard();
+            Board.UpdateBoard(Controller);
+            Board.DisplayBoard();
+            
+
+            Console.ReadLine();
 
         }
     }
