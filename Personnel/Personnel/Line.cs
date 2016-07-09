@@ -8,16 +8,11 @@ namespace Personnel
 {
     class Line
     {
-        private string Lines;
+        public string Lines { get; private set; }
 
         public Line(string line)
         {
             Lines = string.Format(line);
-        }
-
-        public string GetLine()
-        {
-            return (Lines);
         }
     }
 }

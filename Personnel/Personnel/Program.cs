@@ -44,7 +44,7 @@ namespace Personnel
             {
                 foreach (Line lineInList in LinesList)
                 {
-                    Console.WriteLine(lineInList.GetLine());
+                    Console.WriteLine(lineInList.Lines);
                 }
             }
 

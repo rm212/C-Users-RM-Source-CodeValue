@@ -10,16 +10,16 @@ namespace ConsoleApplication9
     {
 
         // a. Create a constructor that accepts two integers being the numerator and denominator.             
-        private int Numerator;
-        private int Denominator;
+        private int _numerator;
+        private int _denominator;
 
         public void SetValue(int numberNumerator, int numberDenominator)
         {
             try
             {
                 int checkForDenominatorOfZero = (numberNumerator / numberDenominator) ;
-                Numerator = numberNumerator;
-                Denominator = numberDenominator;
+                _numerator = numberNumerator;
+                _denominator = numberDenominator;
             }
             catch
             {
@@ -30,33 +30,33 @@ namespace ConsoleApplication9
         // b. Create another constructor that accepts a single integer. The denominator should be set to 1.
         public void SetValue(int integerNumber)  // Using for setting of a whole number
         {
-            Numerator = integerNumber;
-            Denominator = 1;
+            _numerator = integerNumber;
+            _denominator = 1;
         }
 
         // c. Add properties that return the numerator and denominator.
-        public int GetNumerator() { return Numerator; }
-        public int GetDenominator() { return Denominator; }
+        public int GetNumerator() { return _numerator; }
+        public int GetDenominator() { return _denominator; }
 
         // d. Add a property that returns the value as a double.
         public double ConvertToDouble()
         {
-            return Convert.ToDouble(Convert.ToDouble(Numerator) / Convert.ToDouble(Denominator));
+            return Convert.ToDouble(Convert.ToDouble(_numerator) / Convert.ToDouble(_denominator));
         }
 
         // e. Add an Add method that adds two Rational objects. Make this method return a new Rational instance.
         public void Add(Rational ratio1, Rational ratio2)
         {
-            Numerator = ratio1.GetNumerator() * ratio2.GetDenominator() + ratio2.GetNumerator() * ratio1.GetDenominator();
-            Denominator = ratio1.GetDenominator() * ratio2.GetDenominator();
+            _numerator = ratio1.GetNumerator() * ratio2.GetDenominator() + ratio2.GetNumerator() * ratio1.GetDenominator();
+            _denominator = ratio1.GetDenominator() * ratio2.GetDenominator();
         }
 
 
         // f. Add a Mul method that multiplies Rational objects. Make this method return a new Rational instance.
         public void Mul(Rational ratio1, Rational ratio2)
         {
-            Numerator = ratio1.GetNumerator() * ratio2.GetNumerator();
-            Denominator = ratio1.GetDenominator() * ratio2.GetDenominator();
+            _numerator = ratio1.GetNumerator() * ratio2.GetNumerator();
+            _denominator = ratio1.GetDenominator() * ratio2.GetDenominator();
         }
 
         // g. (*) Add a Reduce method to simplify the Rational object. This method should return void.
@@ -64,18 +64,18 @@ namespace ConsoleApplication9
         public void Simplify(Rational ratioA)
         {
             // Setting the numerator and the denominator
-            Numerator = ratioA.GetNumerator();
-            Denominator = ratioA.GetDenominator();
+            _numerator = ratioA.GetNumerator();
+            _denominator = ratioA.GetDenominator();
 
             // Get the minimal run time for simplify
-            int small = Math.Min(ratioA.Numerator, ratioA.Denominator);
+            int small = Math.Min(ratioA._numerator, ratioA._denominator);
 
             for (int i = small; i >= 1; i--)
             {
-                if ((Numerator % i == 0) && (Denominator % i == 0))
+                if ((_numerator % i == 0) && (_denominator % i == 0))
                 {
-                    Numerator = Numerator / i;
-                    Denominator = Denominator / i;
+                    _numerator = _numerator / i;
+                    _denominator = _denominator / i;
                 }
             }
         }
@@ -90,7 +90,7 @@ namespace ConsoleApplication9
                 return false;
             }
             // Return true if the fields match:
-            return (Numerator == ratio2.Numerator) && (Denominator == ratio2.Denominator);
+            return (_numerator == ratio2._numerator) && (_denominator == ratio2._denominator);
         }
 
         // Override ToString (To Define the display of the "Double" with 4 digits after the decimale point)
@@ -105,7 +105,7 @@ namespace ConsoleApplication9
 
         public string Display()
         {
-            return (string.Format("{0} / {1}", Convert.ToInt32(this.Numerator), Convert.ToInt32(this.Denominator)));
+            return (string.Format("{0} / {1}", Convert.ToInt32(this._numerator), Convert.ToInt32(this._denominator)));
         }
 
 
@@ -118,8 +118,8 @@ namespace ConsoleApplication9
         {
             Rational newRational = new Rational();
             // (a / b)+(c / d) -> (a * d + b * c)/(b * d)
-            newRational.Numerator = ratio1.GetNumerator() * ratio2.GetDenominator() + ratio2.GetNumerator() * ratio1.GetDenominator();
-            newRational.Denominator = ratio1.GetDenominator() * ratio2.GetDenominator();
+            newRational._numerator = ratio1.GetNumerator() * ratio2.GetDenominator() + ratio2.GetNumerator() * ratio1.GetDenominator();
+            newRational._denominator = ratio1.GetDenominator() * ratio2.GetDenominator();
 
             return (newRational);
         }
@@ -129,8 +129,8 @@ namespace ConsoleApplication9
         {
             Rational newRational = new Rational();
             // (a / b)-(c / d) -> (a * d - b * c)/(b * d)
-            newRational.Numerator = ratio1.GetNumerator() * ratio2.GetDenominator() - ratio2.GetNumerator() * ratio1.GetDenominator();
-            newRational.Denominator = ratio1.GetDenominator() * ratio2.GetDenominator();
+            newRational._numerator = ratio1.GetNumerator() * ratio2.GetDenominator() - ratio2.GetNumerator() * ratio1.GetDenominator();
+            newRational._denominator = ratio1.GetDenominator() * ratio2.GetDenominator();
 
             return (newRational);
         }
@@ -140,8 +140,8 @@ namespace ConsoleApplication9
         {
             Rational newRational = new Rational();
             // (a / b)*(c / d) -> (a * c)/(b * d)
-            newRational.Numerator = ratio1.GetNumerator() * ratio2.GetNumerator();
-            newRational.Denominator = ratio1.GetDenominator() * ratio2.GetDenominator();
+            newRational._numerator = ratio1.GetNumerator() * ratio2.GetNumerator();
+            newRational._denominator = ratio1.GetDenominator() * ratio2.GetDenominator();
 
             return (newRational);
         }
@@ -156,8 +156,8 @@ namespace ConsoleApplication9
             try
             {
                 int checkForDenominatorOfZero = ratio1.GetNumerator() / ratio2.GetNumerator();
-                newRational.Numerator = ratio1.GetNumerator() * ratio2.GetDenominator();
-                newRational.Denominator = ratio1.GetDenominator() * ratio2.GetNumerator();
+                newRational._numerator = ratio1.GetNumerator() * ratio2.GetDenominator();
+                newRational._denominator = ratio1.GetDenominator() * ratio2.GetNumerator();
             }
             catch
             {
