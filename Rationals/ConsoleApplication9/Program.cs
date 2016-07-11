@@ -15,74 +15,74 @@ namespace ConsoleApplication9
             // Create some Rational objects, initialize with some values,
             // and test the code you created to make sure all methods work as expected.
 
-            Rational Ratio1 = new Rational(); // 1st manual rational
-            Rational Ratio2 = new Rational(); // 2nd manual rational
-            Rational Ratio3 = new Rational(); // 1st rational + 2nd rational
-            Rational Ratio4 = new Rational(); // 1st rational * 2nd rational 
-            Rational Ratio5 = new Rational(); // Simplification of Ration3
-            Rational Ratio6 = new Rational(); // Simplification of Ration4
+            Rational ratio1 = new Rational(); // 1st manual rational
+            Rational ratio2 = new Rational(); // 2nd manual rational
+            Rational ratio3 = new Rational(); // 1st rational + 2nd rational
+            Rational ratio4 = new Rational(); // 1st rational * 2nd rational 
+            Rational ratio5 = new Rational(); // Simplification of Ration3
+            Rational ratio6 = new Rational(); // Simplification of Ration4
 
-            Rational Ratio1Simp = new Rational(); // for the simplifyied 1st manual rational
-            Rational Ratio2Simp = new Rational(); // for the simplifyied 2st manual rational
+            Rational ratio1Simp = new Rational(); // for the simplifyied 1st manual rational
+            Rational ratio2Simp = new Rational(); // for the simplifyied 2st manual rational
 
             // Using the basic SetValue
-            Ratio1.SetValue(8, 22);
-            Ratio2.SetValue(9, 16);
+            ratio1.SetValue(8, 22);
+            ratio2.SetValue(9, 16);
             // Using the Add method
-            Ratio3.Add(Ratio1, Ratio2);
+            ratio3.Add(ratio1, ratio2);
             // Using the Mul method
-            Ratio4.Mul(Ratio1, Ratio2);
+            ratio4.Mul(ratio1, ratio2);
             // Simplifying
-            Ratio1Simp.Simplify(Ratio1);
-            Ratio2Simp.Simplify(Ratio2);
-            Ratio5.Simplify(Ratio3);
-            Ratio6.Simplify(Ratio4);
+            ratio1Simp.Simplify(ratio1);
+            ratio2Simp.Simplify(ratio2);
+            ratio5.Simplify(ratio3);
+            ratio6.Simplify(ratio4);
             
             // Display the results for the methods
             Console.WriteLine("c. Return the numerator and denominator:\n");
             // 1st manual rational 
-            Console.WriteLine("First Rational Number:\n\tAS Rational:\t\t{0} / {1}", Ratio1.GetNumerator(), Ratio1.GetDenominator());
-            Console.WriteLine("\tAs Double: \t\t{0}", ((Ratio1.ToString())));
-            if (Ratio1.Equals(Ratio1Simp))
+            Console.WriteLine("First Rational Number:\n\tAS Rational:\t\t{0} / {1}", ratio1.GetNumerator(), ratio1.GetDenominator());
+            Console.WriteLine("\tAs Double: \t\t{0}", ((ratio1.ToString())));
+            if (ratio1.Equals(ratio1Simp))
             { Console.WriteLine("This rational is already the simplified rational\n"); }
             else
-            { Console.WriteLine("\tSimplifyied Ratio:\t{0} / {1}\n", Ratio1Simp.GetNumerator(), Ratio1Simp.GetDenominator()); }
+            { Console.WriteLine("\tSimplifyied Ratio:\t{0} / {1}\n", ratio1Simp.GetNumerator(), ratio1Simp.GetDenominator()); }
             
             // 2nd manual rational
-            Console.WriteLine("Second Rational Number:\t\t{0} / {1}", Ratio2.GetNumerator(), Ratio2.GetDenominator());
-            Console.WriteLine("\tAs Double: \t\t{0}", ((Ratio2.ToString())));
-            if (Ratio2.Equals(Ratio2Simp))
+            Console.WriteLine("Second Rational Number:\t\t{0} / {1}", ratio2.GetNumerator(), ratio2.GetDenominator());
+            Console.WriteLine("\tAs Double: \t\t{0}", ((ratio2.ToString())));
+            if (ratio2.Equals(ratio2Simp))
             { Console.WriteLine("This rational is already the simplified rational\n"); }
             else
-            { Console.WriteLine("\tSimplifyied Ratio:\t{0} / {1}\n", Ratio2Simp.GetNumerator(), Ratio2Simp.GetDenominator()); }
+            { Console.WriteLine("\tSimplifyied Ratio:\t{0} / {1}\n", ratio2Simp.GetNumerator(), ratio2Simp.GetDenominator()); }
 
             Console.WriteLine();
             Console.WriteLine("d. Returns the value as a double. :\n");
             
-            Console.WriteLine("\t Return First Rational As Double :\t {0}",Ratio1.ConvertToDouble());
-            Console.WriteLine("\t Return Second Rational As Double :\t {0}", Ratio2.ConvertToDouble());
+            Console.WriteLine("\t Return First Rational As Double :\t {0}",ratio1.ConvertToDouble());
+            Console.WriteLine("\t Return Second Rational As Double :\t {0}", ratio2.ConvertToDouble());
 
 
             // 1st rational + 2nd rational
             Console.WriteLine();
             Console.WriteLine("e. Using the Add method:\n");
-            Console.Write("Third rational number:\t{0} / {1}", Ratio3.GetNumerator(), Ratio3.GetDenominator());
-            Console.WriteLine("\t (As double: {0})", (Ratio3.ToString()));
+            Console.Write("Third rational number:\t{0} / {1}", ratio3.GetNumerator(), ratio3.GetDenominator());
+            Console.WriteLine("\t (As double: {0})", (ratio3.ToString()));
 
-            if (Ratio3.Equals(Ratio5))
+            if (ratio3.Equals(ratio5))
             { Console.WriteLine("This rational is already the simplified rational\n"); }
             else
-            { Console.WriteLine("Simplifyied Ratio:\t{0} / {1}\n", Ratio5.GetNumerator(), Ratio5.GetDenominator()); }
+            { Console.WriteLine("Simplifyied Ratio:\t{0} / {1}\n", ratio5.GetNumerator(), ratio5.GetDenominator()); }
 
             // 1st rational * 2nd rational 
             Console.WriteLine();
             Console.WriteLine("f. Using the Mul method :");
-            Console.Write("Fourth rational number:\t{0} / {1}", Ratio4.GetNumerator(), Ratio4.GetDenominator());
-            Console.WriteLine("\t (As double: {0})", ((Ratio4.ToString())));
-            if (Ratio4.Equals(Ratio6))
+            Console.Write("Fourth rational number:\t{0} / {1}", ratio4.GetNumerator(), ratio4.GetDenominator());
+            Console.WriteLine("\t (As double: {0})", ((ratio4.ToString())));
+            if (ratio4.Equals(ratio6))
             { Console.WriteLine("This rational is already the simplified rational\n"); }
             else
-            { Console.WriteLine("Simplifyied Ratio:\t{0} / {1}\n", Ratio6.GetNumerator(), Ratio6.GetDenominator()); }
+            { Console.WriteLine("Simplifyied Ratio:\t{0} / {1}\n", ratio6.GetNumerator(), ratio6.GetDenominator()); }
 
             // Implementation for b: Create another constructor that accepts a single integer. The denominator should be set to 1. 
             Rational WholeNumber = new Rational();
@@ -95,60 +95,60 @@ namespace ConsoleApplication9
             Console.WriteLine("----------------------------------------------------------------------------------------------");
             Console.WriteLine("Appendix: Operator Overloading \n");
 
-            Console.Write("Rational 1:\t{0} / {1}\t", Ratio1.GetNumerator(), Ratio1.GetDenominator());
-            Console.WriteLine("\t;\t Rational 2:\t{0} / {1}\n", Ratio2.GetNumerator(), Ratio2.GetDenominator());
+            Console.Write("Rational 1:\t{0} / {1}\t", ratio1.GetNumerator(), ratio1.GetDenominator());
+            Console.WriteLine("\t;\t Rational 2:\t{0} / {1}\n", ratio2.GetNumerator(), ratio2.GetDenominator());
 
             Console.WriteLine("2. Override Operators  + , - , * , / \n");
-            Rational RatioAppendix1 = Ratio1 + Ratio2;
-            Rational RatioAppendix2 = Ratio1 - Ratio2;
-            Rational RatioAppendix3 = Ratio1 * Ratio2;
-            Rational RatioAppendix4 = Ratio1 / Ratio2;
+            Rational ratioAppendix1 = ratio1 + ratio2;
+            Rational ratioAppendix2 = ratio1 - ratio2;
+            Rational ratioAppendix3 = ratio1 * ratio2;
+            Rational ratioAppendix4 = ratio1 / ratio2;
 
 
             // Dispaly For the Implementation of Operator "+"
-            Console.Write("Operator \"+\":\t{0} / {1}", RatioAppendix1.GetNumerator(), RatioAppendix1.GetDenominator());
-            RatioAppendix1.Simplify(RatioAppendix1);
-            Console.Write("\tSimplified:\t{0} / {1}", RatioAppendix1.GetNumerator(), RatioAppendix1.GetDenominator());
-            Console.WriteLine("\t (As double: {0})", (RatioAppendix1.ToString()));
+            Console.Write("Operator \"+\":\t{0} / {1}", ratioAppendix1.GetNumerator(), ratioAppendix1.GetDenominator());
+            ratioAppendix1.Simplify(ratioAppendix1);
+            Console.Write("\tSimplified:\t{0} / {1}", ratioAppendix1.GetNumerator(), ratioAppendix1.GetDenominator());
+            Console.WriteLine("\t (As double: {0})", (ratioAppendix1.ToString()));
             
             // Dispaly For the Implementation of Operator "-"
-            Console.Write("Operator \"-\":\t{0}", RatioAppendix2.Display());
-            RatioAppendix2.Simplify(RatioAppendix2);
-            Console.Write("\tSimplified:\t{0}", RatioAppendix2.Display());
-            Console.WriteLine("\t (As double: {0})", (RatioAppendix2.ToString()));
+            Console.Write("Operator \"-\":\t{0}", ratioAppendix2.Display());
+            ratioAppendix2.Simplify(ratioAppendix2);
+            Console.Write("\tSimplified:\t{0}", ratioAppendix2.Display());
+            Console.WriteLine("\t (As double: {0})", (ratioAppendix2.ToString()));
 
             // Dispaly For the Implementation of Operator "*"
-            Console.Write("Operator \"*\":\t{0}", RatioAppendix3.Display());
-            RatioAppendix3.Simplify(RatioAppendix3);
-            Console.Write("\tSimplified:\t{0}  ", RatioAppendix3.Display());
-            Console.WriteLine("\t (As double: {0})", (RatioAppendix3.ToString()));
+            Console.Write("Operator \"*\":\t{0}", ratioAppendix3.Display());
+            ratioAppendix3.Simplify(ratioAppendix3);
+            Console.Write("\tSimplified:\t{0}  ", ratioAppendix3.Display());
+            Console.WriteLine("\t (As double: {0})", (ratioAppendix3.ToString()));
 
             // Dispaly For the Implementation of Operator "/"
-            Console.Write("Operator \"/\":\t{0}", RatioAppendix4.Display());
-            RatioAppendix4.Simplify(RatioAppendix4);
-            Console.Write("\tSimplified:\t{0}  ", RatioAppendix4.Display());
-            Console.WriteLine("\t (As double: {0})", (RatioAppendix4.ToString()));
+            Console.Write("Operator \"/\":\t{0}", ratioAppendix4.Display());
+            ratioAppendix4.Simplify(ratioAppendix4);
+            Console.Write("\tSimplified:\t{0}  ", ratioAppendix4.Display());
+            Console.WriteLine("\t (As double: {0})", (ratioAppendix4.ToString()));
 
 
             Console.WriteLine("\n3. Add casting operator to double and from an integer:");
-            Console.WriteLine("Casting the rational number:\t{0}\t to double: {1}", Ratio2.Display(), (double)Ratio2);
+            Console.WriteLine("Casting the rational number:\t{0}\t to double: {1}", ratio2.Display(), (double)ratio2);
 
             Console.WriteLine("Casting the integer 16 to Rational number: \t{0}\t", ((Rational)16).Display());
 
 
             Console.WriteLine("\n\nError Checking: Set Denominator of '0'");
-            Rational WrongDenominator = new Rational();
-             WrongDenominator.SetValue(4,0);
+            Rational wrongDenominator = new Rational();
+             wrongDenominator.SetValue(4,0);
  
 
             Console.WriteLine("\n\nError Checking: avoid dividing by '0'");
-            Rational WrongValue = new Rational();
-            WrongValue.SetValue(0,15);
-            Console.WriteLine("\tA:  First Number:\t{0}", Ratio1.Display());
-            Console.WriteLine("\tB:  WrongValue:\t{0}", WrongValue.Display());
+            Rational wrongValue = new Rational();
+            wrongValue.SetValue(0,15);
+            Console.WriteLine("\tA:  First Number:\t{0}", ratio1.Display());
+            Console.WriteLine("\tB:  WrongValue:\t{0}", wrongValue.Display());
 
             Console.WriteLine("Check result for A / B:");
-            WrongValue = Ratio1 / WrongValue;
+            wrongValue = ratio1 / wrongValue;
 
 
             Console.ReadLine();
