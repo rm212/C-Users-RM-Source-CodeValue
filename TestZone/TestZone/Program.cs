@@ -29,7 +29,7 @@ namespace ConsoleApplication1
             Console.WriteLine();
 
             Console.WriteLine("Search pattern test?.txt returns:");
-            foreach (var fi in di.GetFiles("*.txt"))
+            foreach (var fi in di.GetFiles("test?.txt"))
             {
                 Console.WriteLine(fi.Name);
             }
