@@ -16,6 +16,9 @@ namespace Backgammon
             for (int i = 0; i < boardDefault.Length; i++)
             { gameBoard[i] = string.Copy(boardDefault[i]); }
             //{ gameBoard[i] = boardDefault[i]; }
+
+
+
         }
 
         public void UpdateBoard(Board board)

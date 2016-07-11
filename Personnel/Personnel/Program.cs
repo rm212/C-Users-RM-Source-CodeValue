@@ -16,16 +16,21 @@ namespace Personnel
             // 4. Display the list. 
 
             string line;
-            var LinesList = new List<Line>();
+            var linesList = new List<Line>();
+
+            // File's path:
+            string curFile = "C:/Users/RM/Source/Repos/C-Users-RM-Source-CodeValue/Personnel/CartoonsList.txt";
 
             try
             {
-                using (StreamReader source = new StreamReader("C:/Users/RM/Source/Repos/C-Users-RM-Source-CodeValue/Personnel/CartoonsList.txt"))
+                // Read data from file
+                using (StreamReader source = new StreamReader(curFile))
                 {
                     while ((line = source.ReadLine()) != null)
                     {
+                        // Generate the list:
                         Line LineToAdd = new Line(line);
-                        LinesList.Add(LineToAdd);
+                        linesList.Add(LineToAdd);
                     }
                 }
             }
@@ -34,23 +39,30 @@ namespace Personnel
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
             }
-            Console.WriteLine("Printing the list of names in the file:\n");
 
-            if (LinesList == null)
+            // Display the list
+            if (File.Exists(curFile))
             {
-                Console.WriteLine("There are no records in the file");
+                if (linesList.Any())
+                {
+                    Console.WriteLine("Printing the list of names in the file:\n");
+
+                    foreach (Line lineInList in linesList)
+                    {
+                        Console.WriteLine(lineInList.Lines);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("There are no records in the file");
+                }
             }
             else
             {
-                foreach (Line lineInList in LinesList)
-                {
-                    Console.WriteLine(lineInList.Lines);
-                }
+                Console.WriteLine("File does not exist.");
             }
-
+            
             Console.ReadLine();
-
-
         }
     }
 }

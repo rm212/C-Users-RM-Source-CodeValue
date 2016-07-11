@@ -113,7 +113,7 @@ namespace CustomersApp
         //        and an instance of the CustomFilter delegate
         //        and returns a collection of Customers. 
         
-        static List<Customer> GetCustomers(Customer[] customers, CustomerFilter filter) // returns a collection of Customers (ArrayList).
+        public List<Customer> GetCustomers(Customer[] customers, CustomerFilter filter) // returns a collection of Customers (ArrayList).
         {
             var filteredCustomers = new List<Customer>();
             foreach (var customer in customers)
@@ -127,7 +127,7 @@ namespace CustomersApp
         }
 
 
-        static bool AToKCustomerFilter (Customer customer) // Return true if the first letter is from a to k, else, return false
+        public bool AToKCustomerFilter (Customer customer) // Return true if the first letter is from a to k, else, return false
         {
             if ((customer == null) || (string.IsNullOrEmpty(customer.GetName()))) { return false; }
             else
